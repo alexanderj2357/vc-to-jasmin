@@ -1,0 +1,28 @@
+package VC.Scanner;
+
+public class SourcePosition {
+
+    public int lineStart, lineFinish;
+    public int charStart, charFinish;
+
+    public SourcePosition() {
+        lineStart = lineFinish = charStart = charFinish = 0;
+    }
+
+    public SourcePosition(int theLineStart, int theLineFinish) {
+        lineStart = theLineStart;
+        lineFinish = theLineFinish;
+        charStart = 0;
+        charFinish = 0;
+    }
+
+    public SourcePosition(int theLineNum, int theCharStart, int theCharFinish) {
+        lineStart = lineFinish = theLineNum;
+        charStart = theCharStart;
+        charFinish = theCharFinish;
+    }
+
+    public String toString() {
+        return lineStart + "(" + charStart + ").." + lineFinish + "(" + charFinish + ")";
+    }
+}
